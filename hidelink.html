@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        $(function(){
+            $("a.hidelink").each(function (index, element){
+                var href = $(this).attr("href");
+                $(this).attr("hiddenhref", href);
+                $(this).removeAttr("href");
+            });
+            $("a.hidelink").click(function(){
+                url = $(this).attr("hiddenhref");
+                window.open(url, '_blank');
+            })
+        });
+    </script>
+    <style>
+        a.hidelink {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<a class="hidelink" href="https://google.com">Skip to Content</a><br/>
+<a class="hidelink" onclick="window.open('https://google.com')" href="https://www.arilia.my.id" >Membuat 2 Link Terbuka Dengan Satu Klik</a><br/>
+<a href="https://google.com" target="_blank">Tanpa Sembunyi</a><br/>
+</body>
+</html>
