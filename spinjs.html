@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Spintax Spinner</title>
+  </head>
+  <body>
+    <script>
+    var SPINTAX_PATTERN = /\{[^"\r\n\}]*\}/;
+var spin = function (spun) {
+  var match;
+  while (match = spun.match(SPINTAX_PATTERN)) {
+   match = match[0];
+   var candidates = match.substring(1, match.length - 1).split("|");
+   spun = spun.replace(match, candidates[Math.floor(Math.random() * candidates.length)])
+  }
+  return spun;
+ }
+
+ var sample_str="{Are you searching|Do you seek} for the {latest|most recent} and {most reliable|dependable} information about XXXX? {Look no further|Cease your search}! {You've landed|You have stumbled upon} the {right website|perfect portal} where {we provide|we furnish} {in-depth|comprehensive} and {up-to-date|current} information about XXXX. {We understand|We grasp} the {importance|significance} of having access to {accurate|precise} and {trustworthy|credible} information, {which is why|and that is the reason} we've dedicated ourselves to providing the {best resources|finest materials} on XXXX. {On this page|Here}, you'll find a {wealth|abundance} of information about the topic, including {detailed descriptions|elaborate explanations}, {expert insights|professional perspectives}, and relevant references. And if you need even more information, simply look {below|beneath} where you'll find {additional resources|supplementary materials} and links to related articles. {Our goal|Our objective} is to be your {go-to source|trusted source} for all things XXXX, and we are {confident|certain} that you'll find {everything|all} you're looking for and more right here.";
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementsByClassName("sample")[0].innerHTML = spin(sample_str);
+})
+
+    </script>
+	<p class="sample">Do you seek for the most recent and most reliable information about XXXX? Look no further! You've landed the perfect portal where we furnish in-depth and up-to-date information about XXXX. We grasp the significance of having access to precise and credible information, and that is the reason we've dedicated ourselves to providing the finest materials on XXXX. On this page, you'll find a wealth of information about the topic, including detailed descriptions, professional perspectives, and relevant references. And if you need even more information, simply look below where you'll find additional resources and links to related articles. Our goal is to be your trusted source for all things XXXX, and we are certain that you'll find everything you're looking for and more right here.</p>
+  </body>
+</html>
