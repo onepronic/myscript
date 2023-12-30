@@ -1,0 +1,23 @@
+<script>
+var randomlinks = [];
+randomlinks[0]="http://ducksarethebest.com/";
+randomlinks[1]="http://cant-not-tweet-this.com/";
+randomlinks[2]="http://just-shower-thoughts.tumblr.com/";
+randomlinks[3]="http://www.fallingfalling.com/";
+randomlinks[4]="http://www.partridgegetslucky.com/";
+randomlinks[5]="http://ducksarethebest.com/";
+randomlinks[6]="http://cant-not-tweet-this.com/";
+randomlinks[7]="http://just-shower-thoughts.tumblr.com/";
+randomlinks[8]="http://www.fallingfalling.com/";
+randomlinks[9]="http://www.staggeringbeauty.com/";
+randomlinks[10]="http://www.trypap.com/";
+
+function randomlink(){
+  window.open(randomlinks[Math.floor(Math.random()*randomlinks.length)]);
+}
+</script>
+<form method="post">
+    <p><input type="button" name="B1" value="Random Link >>" onclick="randomlink()"></p> 
+</form>
+    or
+<a href="#" onclick="randomlink()">Random Link</a>
